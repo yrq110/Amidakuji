@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A48EBE71CFE96080066E0FA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7A48EBE61CFE96080066E0FA /* Podfile */; };
+		7A48EBED1CFE9DE40066E0FA /* ACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A48EBEC1CFE9DE40066E0FA /* ACButton.swift */; };
 		7A7A0ACC1CF9EC62003617EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A0ACB1CF9EC62003617EA /* AppDelegate.swift */; };
 		7A7A0ACE1CF9EC62003617EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A0ACD1CF9EC62003617EA /* ViewController.swift */; };
 		7A7A0AD11CF9EC62003617EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A0ACF1CF9EC62003617EA /* Main.storyboard */; };
@@ -14,7 +16,7 @@
 		7A7A0AD61CF9EC62003617EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A0AD51CF9EC62003617EA /* Assets.xcassets */; };
 		7A7A0AD91CF9EC62003617EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A0AD71CF9EC62003617EA /* LaunchScreen.storyboard */; };
 		7A7A0AE41CF9EC62003617EA /* amidakujiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A0AE31CF9EC62003617EA /* amidakujiTests.swift */; };
-		7A7A0AEF1CF9F041003617EA /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A0AEE1CF9F041003617EA /* MainView.storyboard */; };
+		D4B8D6A22FCC7917A54A1264 /* libPods-amidakuji.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1F7A99A39CFFABEA1155EE /* libPods-amidakuji.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A48EBE61CFE96080066E0FA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		7A48EBE81CFE98E90066E0FA /* amidakuji-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "amidakuji-Bridging-Header.h"; sourceTree = "<group>"; };
+		7A48EBEC1CFE9DE40066E0FA /* ACButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACButton.swift; sourceTree = "<group>"; };
 		7A7A0AC81CF9EC62003617EA /* amidakuji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amidakuji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7A0ACB1CF9EC62003617EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A7A0ACD1CF9EC62003617EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +44,9 @@
 		7A7A0ADF1CF9EC62003617EA /* amidakujiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = amidakujiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7A0AE31CF9EC62003617EA /* amidakujiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amidakujiTests.swift; sourceTree = "<group>"; };
 		7A7A0AE51CF9EC62003617EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A7A0AEE1CF9F041003617EA /* MainView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
+		C62703E6972083953202D755 /* Pods-amidakuji.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amidakuji.release.xcconfig"; path = "Pods/Target Support Files/Pods-amidakuji/Pods-amidakuji.release.xcconfig"; sourceTree = "<group>"; };
+		D77D89829548E2C858F482AF /* Pods-amidakuji.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amidakuji.debug.xcconfig"; path = "Pods/Target Support Files/Pods-amidakuji/Pods-amidakuji.debug.xcconfig"; sourceTree = "<group>"; };
+		DC1F7A99A39CFFABEA1155EE /* libPods-amidakuji.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-amidakuji.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4B8D6A22FCC7917A54A1264 /* libPods-amidakuji.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +68,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		287936497306222364D809DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC1F7A99A39CFFABEA1155EE /* libPods-amidakuji.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7A7A0ABF1CF9EC62003617EA = {
 			isa = PBXGroup;
 			children = (
+				7A48EBE61CFE96080066E0FA /* Podfile */,
 				7A7A0ACA1CF9EC62003617EA /* amidakuji */,
 				7A7A0AE21CF9EC62003617EA /* amidakujiTests */,
 				7A7A0AC91CF9EC62003617EA /* Products */,
+				7B17DCA82ACAB1AEFEBA0BBB /* Pods */,
+				287936497306222364D809DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,14 +100,15 @@
 		7A7A0ACA1CF9EC62003617EA /* amidakuji */ = {
 			isa = PBXGroup;
 			children = (
+				7A48EBEC1CFE9DE40066E0FA /* ACButton.swift */,
 				7A7A0ACB1CF9EC62003617EA /* AppDelegate.swift */,
 				7A7A0ACD1CF9EC62003617EA /* ViewController.swift */,
 				7A7A0ACF1CF9EC62003617EA /* Main.storyboard */,
-				7A7A0AEE1CF9F041003617EA /* MainView.storyboard */,
 				7A7A0AD51CF9EC62003617EA /* Assets.xcassets */,
 				7A7A0AD71CF9EC62003617EA /* LaunchScreen.storyboard */,
 				7A7A0ADA1CF9EC62003617EA /* Info.plist */,
 				7A7A0AD21CF9EC62003617EA /* amidakuji.xcdatamodeld */,
+				7A48EBE81CFE98E90066E0FA /* amidakuji-Bridging-Header.h */,
 			);
 			path = amidakuji;
 			sourceTree = "<group>";
@@ -102,6 +122,15 @@
 			path = amidakujiTests;
 			sourceTree = "<group>";
 		};
+		7B17DCA82ACAB1AEFEBA0BBB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D77D89829548E2C858F482AF /* Pods-amidakuji.debug.xcconfig */,
+				C62703E6972083953202D755 /* Pods-amidakuji.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A7A0AE81CF9EC62003617EA /* Build configuration list for PBXNativeTarget "amidakuji" */;
 			buildPhases = (
+				522F652FD1E1713D0086D597 /* 📦 Check Pods Manifest.lock */,
 				7A7A0AC41CF9EC62003617EA /* Sources */,
 				7A7A0AC51CF9EC62003617EA /* Frameworks */,
 				7A7A0AC61CF9EC62003617EA /* Resources */,
+				0BD2C739CFB63F5C43E66155 /* 📦 Embed Pods Frameworks */,
+				54A7F9CD43C117568CFB5D08 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,9 +215,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A48EBE71CFE96080066E0FA /* Podfile in Resources */,
 				7A7A0AD91CF9EC62003617EA /* LaunchScreen.storyboard in Resources */,
 				7A7A0AD61CF9EC62003617EA /* Assets.xcassets in Resources */,
-				7A7A0AEF1CF9F041003617EA /* MainView.storyboard in Resources */,
 				7A7A0AD11CF9EC62003617EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,12 +231,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0BD2C739CFB63F5C43E66155 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-amidakuji/Pods-amidakuji-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		522F652FD1E1713D0086D597 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		54A7F9CD43C117568CFB5D08 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-amidakuji/Pods-amidakuji-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7A7A0AC41CF9EC62003617EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7A7A0ACE1CF9EC62003617EA /* ViewController.swift in Sources */,
+				7A48EBED1CFE9DE40066E0FA /* ACButton.swift in Sources */,
 				7A7A0AD41CF9EC62003617EA /* amidakuji.xcdatamodeld in Sources */,
 				7A7A0ACC1CF9EC62003617EA /* AppDelegate.swift in Sources */,
 			);
@@ -333,23 +414,30 @@
 		};
 		7A7A0AE91CF9EC62003617EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D77D89829548E2C858F482AF /* Pods-amidakuji.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = amidakuji/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yrq.amidakuji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "amidakuji/amidakuji-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		7A7A0AEA1CF9EC62003617EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C62703E6972083953202D755 /* Pods-amidakuji.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = amidakuji/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yrq.amidakuji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "amidakuji/amidakuji-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -396,6 +484,7 @@
 				7A7A0AEA1CF9EC62003617EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A7A0AEB1CF9EC62003617EA /* Build configuration list for PBXNativeTarget "amidakujiTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +493,7 @@
 				7A7A0AED1CF9EC62003617EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
