@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0327C31D03C918001A2EE0 /* HamburgerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0327C21D03C918001A2EE0 /* HamburgerButton.swift */; };
 		7A48EBE71CFE96080066E0FA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7A48EBE61CFE96080066E0FA /* Podfile */; };
 		7A48EBED1CFE9DE40066E0FA /* ACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A48EBEC1CFE9DE40066E0FA /* ACButton.swift */; };
 		7A7A0ACC1CF9EC62003617EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A0ACB1CF9EC62003617EA /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A0327C21D03C918001A2EE0 /* HamburgerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerButton.swift; sourceTree = "<group>"; };
 		7A48EBE61CFE96080066E0FA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		7A48EBE81CFE98E90066E0FA /* amidakuji-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "amidakuji-Bridging-Header.h"; sourceTree = "<group>"; };
 		7A48EBEC1CFE9DE40066E0FA /* ACButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACButton.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				7A48EBEC1CFE9DE40066E0FA /* ACButton.swift */,
+				7A0327C21D03C918001A2EE0 /* HamburgerButton.swift */,
 				7A7A0ACB1CF9EC62003617EA /* AppDelegate.swift */,
 				7A7A0ACD1CF9EC62003617EA /* ViewController.swift */,
 				7A7A0ACF1CF9EC62003617EA /* Main.storyboard */,
@@ -287,6 +290,7 @@
 				7A7A0ACE1CF9EC62003617EA /* ViewController.swift in Sources */,
 				7A48EBED1CFE9DE40066E0FA /* ACButton.swift in Sources */,
 				7A7A0AD41CF9EC62003617EA /* amidakuji.xcdatamodeld in Sources */,
+				7A0327C31D03C918001A2EE0 /* HamburgerButton.swift in Sources */,
 				7A7A0ACC1CF9EC62003617EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
