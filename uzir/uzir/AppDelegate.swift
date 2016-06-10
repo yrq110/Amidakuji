@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  amidakuji
+//  uzir
 //
-//  Created by yrq_mac on 16/5/28.
+//  Created by yrq_mac on 16/6/7.
 //  Copyright © 2016年 yrq_mac. All rights reserved.
 //
 
@@ -16,15 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window!.backgroundColor = UIColor.whiteColor()
-        self.window!.makeKeyAndVisible()
-        
-//        let vc = ViewController()
-        let vc = ReverseViewController()
-        self.window!.rootViewController = vc
+
+        if (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8 {
+            //APService.registerForRemoteNotificationTypes(
+            //UIUserNotificationType.Badge.rawValue |
+            //UIUserNotificationType.Sound.rawValue |
+            //UIUserNotificationType.Alert.rawValue,
+            //categories: nil)
+
+            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes:
+//                UIUserNotificationType.Badge |
+//                UIUserNotificationType.Sound |
+//                UIUserNotificationType.Alert, categories: nil))
+                UIUserNotificationType.Sound, categories: nil))
+        }
         
         return true
     }
@@ -35,8 +40,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        let notification = UILocalNotification()
+        notification.timeZone = NSTimeZone.localTimeZone()
+        notification.alertTitle = "This is a new message"
+        notification.alertBody = "Hello~"
+        notification.alertAction = "OK"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.applicationIconBadgeNumber = 1
+        
+        var userInfo:[NSObject : AnyObject] = [NSObject : AnyObject]()
+        userInfo["kLocalNotificationID"] = "LocalNotificationID"
+        userInfo["key"] = "Attention Please"
+        notification.userInfo = userInfo
+        application.presentLocalNotificationNow(notification)
+        
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -56,14 +75,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: NSURL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named "yrq.amidakuji" in the application's documents Application Support directory.
+        // The directory the application uses to store the Core Data store file. This code uses a directory named "yrq.uzir" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1]
     }()
 
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = NSBundle.mainBundle().URLForResource("amidakuji", withExtension: "momd")!
+        let modelURL = NSBundle.mainBundle().URLForResource("uzir", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
 

@@ -9,7 +9,9 @@
 import UIKit
 
 class ACButton: UIButton {
-
+    
+    var x:Int?
+    var y:Int?
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
         
