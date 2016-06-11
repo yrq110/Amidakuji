@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         
-//        let vc = ViewController()
-        let vc = ReverseViewController()
+        let vc = ViewController()
+//        let vc = ReverseViewController()
         self.window!.rootViewController = vc
         
         return true

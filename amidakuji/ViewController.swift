@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     var addTrackButton = ACButton()
     var addSegmentButton = ACButton()
     var clearButton = ACButton()
+    var changeModeButton = UIButton()
     var top:UIView?
     var middle:UIView?
     var bottom:UIView?
@@ -143,6 +144,20 @@ class ViewController: UIViewController {
         hamburger(CGRectMake(170,40, 50, 50),view: view)
         hamburgerButton.center.x = self.view.center.x
         
+        
+        changeModeButton = UIButton(type:.Custom)
+        changeModeButton.setTitle("Mode B", forState: UIControlState.Normal)
+        changeModeButton.frame = CGRectMake(0, 0, 200, 60)
+        changeModeButton.center = CGPointMake(view.center.x, view.frame.size.height-40)
+        changeModeButton.backgroundColor = UIColor.redColor()
+        changeModeButton.addTarget(self, action: #selector(ViewController.goToReverseVC(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        view.addSubview(changeModeButton)
+        
+    }
+    
+    func goToReverseVC(sender:UIButton){
+        let reVC = ReverseViewController()
+        self.presentViewController(reVC, animated: true, completion: nil)
     }
     
     func clearGround(sender:UIButton){
