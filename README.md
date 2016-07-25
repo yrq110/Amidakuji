@@ -1,6 +1,6 @@
 # Amidakuji_Swift
 
-Mode A - Normal:
+##Mode A - Normal:
 
 1.adjust track
 
@@ -12,7 +12,7 @@ Mode A - Normal:
 3.run
 ![](https://github.com/yrq110/Amidakuji_Swift/blob/master/play_gif/1_3.gif)
 
-Mode B - Backstepping:
+##Mode B - Backstepping:
 
 The results are randomized.Make numbers back to their right initial position.
 
