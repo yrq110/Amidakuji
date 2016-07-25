@@ -12,13 +12,14 @@ class ReverseViewController: UIViewController {
 
     let pointSize:CGFloat = 14
     let XStep:CGFloat = 40
-    let YStep:CGFloat = 50
-    var TrackSegemetCount:Int = 8
+    let YStep:CGFloat = 25
+    var TrackSegemetCount:Int = 16
     var x:Int = 0
     var y:Int = 0
     var initPointArray:[Int] = []
     var x_arr = Array<Int>()
     var y_arr = Array<Int>()
+    var scoreArray = Array<Int>()
     var trackDic = Array<(Int,Int)>()
     var tipTrack = Dictionary<Int,Array<(Int,Int)>>()
     var isAnimeOver = true
@@ -50,12 +51,12 @@ class ReverseViewController: UIViewController {
         customTrackView.frame = self.view.frame
         customBackView.frame = self.view.frame
         
-        let count:Int = 5
+        let count:Int = 7
         initArrayFromCount(count)
         
         customTrackCount = count
         
-        var arr = [1,2,3,4,5]
+        var arr = [1,2,3,4,5,6,7]
 //        var arr = [1,5,2,3,4]
         for i in 1...customTrackCount {
             let scope = count+1-i
@@ -84,7 +85,7 @@ class ReverseViewController: UIViewController {
 //            btn.enabled = false
             customBtnView.addSubview(btn)
             
-            let line = UIView(frame:CGRectMake(55+(CGFloat(i)-1)*XStep,140,10,350))
+            let line = UIView(frame:CGRectMake(55+(CGFloat(i)-1)*XStep,120,10,390))
             line.backgroundColor = UIColor.greenColor()
             line.layer.cornerRadius = 3.0
             line.tag = i*1000
@@ -105,7 +106,7 @@ class ReverseViewController: UIViewController {
         let startBtn = ACButton()
         startBtn.setTitle("Go!", forState: UIControlState.Normal)
         startBtn.backgroundColor = UIColor.blackColor()
-        startBtn.frame = CGRectMake(170,40, 50, 50)
+        startBtn.frame = CGRectMake(170,30, 50, 50)
         startBtn.layer.cornerRadius = 25
         startBtn.addTarget(self, action: #selector(ReverseViewController.startAllAnimation(_:)), forControlEvents: UIControlEvents.TouchUpInside)
 //        view.addSubview(startBtn)
@@ -113,14 +114,14 @@ class ReverseViewController: UIViewController {
         
         calculateTrackButton.backgroundColor = UIColor.brownColor()
         calculateTrackButton.setTitle("2-Track", forState: UIControlState.Normal)
-        calculateTrackButton.frame = CGRectMake(260,50, 80, 30)
+        calculateTrackButton.frame = CGRectMake(260,40, 80, 30)
         calculateTrackButton.addTarget(self, action: #selector(ReverseViewController.calculateTrack(_:)), forControlEvents: .TouchUpInside)
         calculateTrackButton.layer.cornerRadius = 10
         customBackView.addSubview(calculateTrackButton)
         
         calculateTurnLineButton.backgroundColor = UIColor.brownColor()
-        calculateTurnLineButton.setTitle("1-AnswerLine", forState: UIControlState.Normal)
-        calculateTurnLineButton.frame = CGRectMake(20,50, 100, 30)
+        calculateTurnLineButton.setTitle("1-Answer", forState: UIControlState.Normal)
+        calculateTurnLineButton.frame = CGRectMake(20,40, 100, 30)
         calculateTurnLineButton.addTarget(self, action: #selector(ReverseViewController.reverse(_:)), forControlEvents: .TouchUpInside)
         calculateTurnLineButton.layer.cornerRadius = 10
         customBackView.addSubview(calculateTurnLineButton)
@@ -211,6 +212,39 @@ class ReverseViewController: UIViewController {
                             thread.cancel()
                             
                             btn.backgroundColor = btn.tag == btn.x! ? UIColor.greenColor() : UIColor.redColor()
+                            
+                            let score = btn.tag == btn.x! ? 1 : 0
+                            self.scoreArray.append(score)
+                            
+                            if self.scoreArray.count == self.customTrackCount {
+                                
+                                var a:Int = 0
+                                let finalScore = self.scoreArray.map({ (element) -> Int in
+                                    a += element
+                                    return a
+                                }).last!
+                                
+                                var alertString:String = ""
+                                switch finalScore {
+                                case self.customTrackCount:
+                                    alertString = "全部正确!本次得分:\(a)"
+                                case 1...self.customTrackCount-1:
+                                    alertString = "再接再厉!本次得分:\(a)"
+                                case 0 :
+                                    alertString = "没一个对的。。这也是天赋。。"
+                                default:
+                                    alertString = ""
+                                }
+                                
+                                let alertController = UIAlertController(title: "提示",message: alertString, preferredStyle: UIAlertControllerStyle.Alert)
+                                let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+                                let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default,handler: { action in
+                                                                
+                                })
+                                alertController.addAction(cancelAction)
+                                alertController.addAction(okAction)
+                                self.presentViewController(alertController, animated: true, completion: nil)
+                            }
                         }
                     }
                 }
