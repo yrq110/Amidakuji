@@ -1,6 +1,6 @@
 # Amidakuji_Swift
 
-##Mode A - Normal:
+##Mode A - Normal
 
 ###1.adjust track
 
@@ -14,7 +14,7 @@
 
 ![](https://github.com/yrq110/Amidakuji_Swift/blob/master/play_gif/1_3.gif)
 
-##Mode B - Backstepping:
+##Mode B - Backstepping
 
 The results are randomized.
 
