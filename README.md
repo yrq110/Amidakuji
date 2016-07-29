@@ -26,7 +26,7 @@ Make numbers back to their right initial position.
 
 ###2.run
 
-![](https://github.com/yrq110/Amidakuji_Swift/blob/master/play_gif/2_1.gif)
+![](https://github.com/yrq110/Amidakuji_Swift/blob/master/play_gif/2_2.gif)
 
 ###3.show answer
 
