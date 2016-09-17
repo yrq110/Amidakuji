@@ -35,3 +35,7 @@ Make numbers back to their right initial position.
 ###4.noob boy
 
 ![](https://github.com/yrq110/Amidakuji_Swift/blob/master/play_gif/2_4.gif)
+
+## Blog
+
+[Swift实现的鬼脚图小游戏](http://yrq110.me/2016/08/06/amidakuji/)
