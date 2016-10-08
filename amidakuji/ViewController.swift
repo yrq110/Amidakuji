@@ -76,17 +76,17 @@ class ViewController: UIViewController {
             
             let btn = ACButton()
             btn.tag = i
-            btn.frame = CGRectMake(45+(CGFloat(i)-1)*40, 100, 30, 30)
-            btn.addTarget(self, action: #selector(ViewController.startTrackAnimation(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            btn.frame = CGRect(x: 45+(CGFloat(i)-1)*40, y: 100, width: 30, height: 30)
+            btn.addTarget(self, action: #selector(ViewController.startTrackAnimation(_:)), for: UIControlEvents.touchUpInside)
             btn.layer.cornerRadius = btn.frame.size.height/2
-            btn.setTitle("\(i)", forState: UIControlState.Normal)
-            btn.setTitleColor(.whiteColor(), forState: .Normal)
-            btn.backgroundColor = UIColor.blackColor()
+            btn.setTitle("\(i)", for: UIControlState())
+            btn.setTitleColor(.white, for: UIControlState())
+            btn.backgroundColor = UIColor.black
             customBtnView.addSubview(btn)
             
             
-            let line = UIView(frame:CGRectMake(55+(CGFloat(i)-1)*XStep,140,10,350))
-            line.backgroundColor = UIColor.greenColor()
+            let line = UIView(frame:CGRect(x: 55+(CGFloat(i)-1)*XStep,y: 140,width: 10,height: 350))
+            line.backgroundColor = UIColor.green
             line.layer.cornerRadius = 3.0
             customTrackView.addSubview(line)
             
@@ -99,41 +99,41 @@ class ViewController: UIViewController {
         customBackView.addSubview(customTrackView)
         customBackView.addSubview(customBtnView)
         
-        addTrackButton.backgroundColor = UIColor.redColor()
-        addTrackButton.titleLabel?.font = UIFont.boldSystemFontOfSize(30.0)
-        addTrackButton.setTitle("+", forState: UIControlState.Normal)
-        addTrackButton.frame = CGRectMake(45+CGFloat(customTrackCount)*40, 140, 30, 30)
-        addTrackButton.addTarget(self, action: #selector(ViewController.addTrackLine(_:)), forControlEvents: .TouchUpInside)
+        addTrackButton.backgroundColor = UIColor.red
+        addTrackButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30.0)
+        addTrackButton.setTitle("+", for: UIControlState())
+        addTrackButton.frame = CGRect(x: 45+CGFloat(customTrackCount)*40, y: 140, width: 30, height: 30)
+        addTrackButton.addTarget(self, action: #selector(ViewController.addTrackLine(_:)), for: .touchUpInside)
         addTrackButton.layer.cornerRadius = 30/2
         customBackView.addSubview(addTrackButton)
         
-        addSegmentButton.backgroundColor = UIColor.redColor()
-        addSegmentButton.titleLabel?.font = UIFont.boldSystemFontOfSize(30.0)
-        addSegmentButton.setTitle("+", forState: UIControlState.Normal)
-        addSegmentButton.frame = CGRectMake(45, 115+CGFloat(TrackSegemetCount)*50, 30, 30)
-        addSegmentButton.addTarget(self, action: #selector(ViewController.addSegment(_:)), forControlEvents: .TouchUpInside)
+        addSegmentButton.backgroundColor = UIColor.red
+        addSegmentButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30.0)
+        addSegmentButton.setTitle("+", for: UIControlState())
+        addSegmentButton.frame = CGRect(x: 45, y: 115+CGFloat(TrackSegemetCount)*50, width: 30, height: 30)
+        addSegmentButton.addTarget(self, action: #selector(ViewController.addSegment(_:)), for: .touchUpInside)
         addSegmentButton.layer.cornerRadius = 30/2
         customBackView.addSubview(addSegmentButton)
         
-        clearButton.backgroundColor = UIColor.brownColor()
-        clearButton.setTitle("Clear", forState: UIControlState.Normal)
-        clearButton.frame = CGRectMake(20,600, 50, 30)
+        clearButton.backgroundColor = UIColor.brown
+        clearButton.setTitle("Clear", for: UIControlState())
+        clearButton.frame = CGRect(x: 20,y: 600, width: 50, height: 30)
         clearButton.center.x = view.center.x
-        clearButton.addTarget(self, action: #selector(ViewController.clearGround(_:)), forControlEvents: .TouchUpInside)
+        clearButton.addTarget(self, action: #selector(ViewController.clearGround(_:)), for: .touchUpInside)
         clearButton.layer.cornerRadius = 10
 //        customBackView.addSubview(clearButton)
         
-        calculateTrackButton.backgroundColor = UIColor.brownColor()
-        calculateTrackButton.setTitle("Calculate", forState: UIControlState.Normal)
-        calculateTrackButton.frame = CGRectMake(20,50, 80, 30)
-        calculateTrackButton.addTarget(self, action: #selector(ViewController.calculateTrack(_:)), forControlEvents: .TouchUpInside)
+        calculateTrackButton.backgroundColor = UIColor.brown
+        calculateTrackButton.setTitle("Calculate", for: UIControlState())
+        calculateTrackButton.frame = CGRect(x: 20,y: 50, width: 80, height: 30)
+        calculateTrackButton.addTarget(self, action: #selector(ViewController.calculateTrack(_:)), for: .touchUpInside)
         calculateTrackButton.layer.cornerRadius = 10
         customBackView.addSubview(calculateTrackButton)
         
-        enableAdjustButton.backgroundColor = UIColor.brownColor()
-        enableAdjustButton.setTitle("Adjust", forState: UIControlState.Normal)
-        enableAdjustButton.frame = CGRectMake(300,50, 60, 30)
-        enableAdjustButton.addTarget(self, action: #selector(ViewController.enableAdjust(_:)), forControlEvents: .TouchUpInside)
+        enableAdjustButton.backgroundColor = UIColor.brown
+        enableAdjustButton.setTitle("Adjust", for: UIControlState())
+        enableAdjustButton.frame = CGRect(x: 300,y: 50, width: 60, height: 30)
+        enableAdjustButton.addTarget(self, action: #selector(ViewController.enableAdjust(_:)), for: .touchUpInside)
         enableAdjustButton.layer.cornerRadius = 10
         customBackView.addSubview(enableAdjustButton)
         view.addSubview(customBackView)
@@ -141,35 +141,35 @@ class ViewController: UIViewController {
 //        customBackView.hidden = true
         
 
-        hamburger(CGRectMake(170,40, 50, 50),view: view)
+        hamburger(CGRect(x: 170,y: 40, width: 50, height: 50),view: view)
         hamburgerButton.center.x = self.view.center.x
         
         
-        changeModeButton = UIButton(type:.Custom)
-        changeModeButton.setTitle("Mode B", forState: UIControlState.Normal)
-        changeModeButton.frame = CGRectMake(0, 0, 200, 60)
-        changeModeButton.center = CGPointMake(view.center.x, view.frame.size.height-40)
-        changeModeButton.backgroundColor = UIColor.redColor()
-        changeModeButton.addTarget(self, action: #selector(ViewController.goToReverseVC(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        changeModeButton = UIButton(type:.custom)
+        changeModeButton.setTitle("Mode B", for: UIControlState())
+        changeModeButton.frame = CGRect(x: 0, y: 0, width: 200, height: 60)
+        changeModeButton.center = CGPoint(x: view.center.x, y: view.frame.size.height-40)
+        changeModeButton.backgroundColor = UIColor.red
+        changeModeButton.addTarget(self, action: #selector(ViewController.goToReverseVC(_:)), for: UIControlEvents.touchUpInside)
         view.addSubview(changeModeButton)
         
     }
     
-    func goToReverseVC(sender:UIButton){
+    func goToReverseVC(_ sender:UIButton){
         let reVC = ReverseViewController()
-        self.presentViewController(reVC, animated: true, completion: nil)
+        self.present(reVC, animated: true, completion: nil)
     }
     
-    func clearGround(sender:UIButton){
+    func clearGround(_ sender:UIButton){
         TrackSegemetCount = 8
         for i in view.subviews {
-            if (i.backgroundColor == UIColor.redColor()) && i.isKindOfClass(UIView) {
+            if (i.backgroundColor == UIColor.red) && i.isKind(of: UIView.self) {
                 i.removeFromSuperview()
             }
         }
     }
     
-    func calculateTrack(sender:UIButton){
+    func calculateTrack(_ sender:UIButton){
 
         for i in 1...customTrackCount {
             
@@ -201,61 +201,61 @@ class ViewController: UIViewController {
         }
         
         print(tipTrack)
-        sender.enabled = false
+        sender.isEnabled = false
     }
     
-    func tapPoint(sender:UIButton){
+    func tapPoint(_ sender:UIButton){
         let a = sender.tag
         let aa = a/100
         let bb = a%100
 //        print("tapPoint")
         let horiLine = UIView()
-        horiLine.frame.size = CGSizeMake(35, 5)
-        horiLine.frame.origin = CGPointMake(sender.center.x, sender.center.y)
+        horiLine.frame.size = CGSize(width: 35, height: 5)
+        horiLine.frame.origin = CGPoint(x: sender.center.x, y: sender.center.y)
         horiLine.center.y = sender.center.y
-        horiLine.backgroundColor = UIColor.redColor()
+        horiLine.backgroundColor = UIColor.red
         customTrackView.addSubview(horiLine)
         
         turnPointArray.append((aa,bb))
         print(turnPointArray)
-        sender.enabled = false
+        sender.isEnabled = false
         let new_tag = (aa+1)*100+bb
         for i in customBtnView.subviews {
 //            print(i)
-            if i.tag == new_tag && i.isKindOfClass(UIButton) {
+            if i.tag == new_tag && i.isKind(of: UIButton.self) {
                 let btn:UIButton = customBtnView.viewWithTag(new_tag) as! UIButton
-                btn.enabled = false
+                btn.isEnabled = false
             }
         }
     }
     
-    func addTrackLine(sender:UIButton){
+    func addTrackLine(_ sender:UIButton){
         
         customTrackCount += 1
         
         let x = self.addTrackButton.center.x + XStep
         
         let moveX = POPSpringAnimation(propertyNamed: kPOPLayerPositionX)
-        moveX.toValue = x
-        moveX.springBounciness = 5
-        moveX.springSpeed = 5
-        sender.layer.pop_addAnimation(moveX, forKey: "moveX")
-        moveX.completionBlock = { (animation, complete) in
+        moveX?.toValue = x
+        moveX?.springBounciness = 5
+        moveX?.springSpeed = 5
+        sender.layer.pop_add(moveX, forKey: "moveX")
+        moveX?.completionBlock = { (animation, complete) in
             if complete {
                 
                 let btn = ACButton()
-                btn.frame = CGRectMake(45+(CGFloat(self.customTrackCount)-1)*40, 100, 30, 30)
+                btn.frame = CGRect(x: 45+(CGFloat(self.customTrackCount)-1)*40, y: 100, width: 30, height: 30)
                 btn.tag = self.customTrackCount
                 self.btn_x_array.append(btn.center.x)
                 btn.layer.cornerRadius = btn.frame.size.height/2
-                btn.addTarget(self, action: #selector(ViewController.startTrackAnimation(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-                btn.setTitle("\(self.customTrackCount)", forState: UIControlState.Normal)
-                btn.setTitleColor(.whiteColor(), forState: .Normal)
-                btn.backgroundColor = UIColor.blackColor()
+                btn.addTarget(self, action: #selector(ViewController.startTrackAnimation(_:)), for: UIControlEvents.touchUpInside)
+                btn.setTitle("\(self.customTrackCount)", for: UIControlState())
+                btn.setTitleColor(.white, for: UIControlState())
+                btn.backgroundColor = UIColor.black
                 self.customBtnView.addSubview(btn)
                 
-                let line = UIView(frame:CGRectMake(55+(CGFloat(self.customTrackCount)-1)*self.XStep,140,10,50*CGFloat(self.TrackSegemetCount-1)))
-                line.backgroundColor = UIColor.greenColor()
+                let line = UIView(frame:CGRect(x: 55+(CGFloat(self.customTrackCount)-1)*self.XStep,y: 140,width: 10,height: 50*CGFloat(self.TrackSegemetCount-1)))
+                line.backgroundColor = UIColor.green
                 line.layer.cornerRadius = 3.0
                 self.customTrackView.addSubview(line)
 
@@ -265,34 +265,34 @@ class ViewController: UIViewController {
         }
     }
     
-    func addSegment(sender:UIButton){
+    func addSegment(_ sender:UIButton){
         
         TrackSegemetCount += 1
         
         let y = self.addSegmentButton.center.y + YStep
         let moveY = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
-        moveY.toValue = y
-        moveY.springBounciness = 5
-        moveY.springSpeed = 5
-        sender.layer.pop_addAnimation(moveY, forKey: "moveY")
-        moveY.completionBlock = { (animation, complete) in
+        moveY?.toValue = y
+        moveY?.springBounciness = 5
+        moveY?.springSpeed = 5
+        sender.layer.pop_add(moveY, forKey: "moveY")
+        moveY?.completionBlock = { (animation, complete) in
             if complete {
                 var lineNo = 0
                 for i in self.customTrackView.subviews {
-                    if i.backgroundColor == UIColor.greenColor(){
+                    if i.backgroundColor == UIColor.green{
 //                        print("addSegment")
                         i.frame.size.height += self.YStep
                         lineNo += 1
                         let circle = ACButton()
                         if lineNo == self.customTrackCount {
-                            circle.enabled = false
+                            circle.isEnabled = false
                         }
                         circle.tag = lineNo*100 + self.TrackSegemetCount - 1
-                        circle.frame.size = CGSizeMake(self.pointSize, self.pointSize)
+                        circle.frame.size = CGSize(width: self.pointSize, height: self.pointSize)
                         circle.layer.cornerRadius = self.pointSize/2
                         (circle.center.x,circle.center.y) = (i.center.x,115+CGFloat(self.TrackSegemetCount-1)*self.self.YStep)
-                        circle.backgroundColor = UIColor.redColor()
-                        circle.addTarget(self, action: #selector(ViewController.tapPoint(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+                        circle.backgroundColor = UIColor.red
+                        circle.addTarget(self, action: #selector(ViewController.tapPoint(_:)), for: UIControlEvents.touchUpInside)
                         self.customBtnView.addSubview(circle)
                     }
                 }
@@ -301,52 +301,52 @@ class ViewController: UIViewController {
         
     }
     
-    func enableLastTrackPoint(count:Int,view:UIView,lineNumber:Int){
+    func enableLastTrackPoint(_ count:Int,view:UIView,lineNumber:Int){
         for i in 1...count {
             let new_tag = (lineNumber)*100+i
             print(new_tag)
             for j in view.subviews {
-                if j.tag == new_tag && j.isKindOfClass(UIButton) {
+                if j.tag == new_tag && j.isKind(of: UIButton.self) {
                     let btn:UIButton = view.viewWithTag(new_tag) as! UIButton
-                    btn.enabled = true
+                    btn.isEnabled = true
                     print("cool")
                 }
             }
         }
     }
     
-    func addPoint(count:Int,line:UIView,view:UIView,lineNumber:Int){
+    func addPoint(_ count:Int,line:UIView,view:UIView,lineNumber:Int){
         
         for i in 1...count-1 {
             let circle = ACButton()
             circle.tag = lineNumber*100 + i
             if lineNumber == customTrackCount {
-                circle.enabled = false
+                circle.isEnabled = false
             }
 //            print(circle.tag)
-            circle.frame.size = CGSizeMake(pointSize, pointSize)
+            circle.frame.size = CGSize(width: pointSize, height: pointSize)
             circle.layer.cornerRadius = pointSize/2
             (circle.center.x,circle.center.y) = (line.center.x,115+CGFloat(i)*self.YStep)
-            circle.backgroundColor = UIColor.redColor()
-            circle.addTarget(self, action: #selector(ViewController.tapPoint(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            circle.backgroundColor = UIColor.red
+            circle.addTarget(self, action: #selector(ViewController.tapPoint(_:)), for: UIControlEvents.touchUpInside)
             view.addSubview(circle)
         }
     
     }
     
-    func enableAdjust(sender:UIButton){
+    func enableAdjust(_ sender:UIButton){
         if enableAdjusyBool == false {
             enableAdjusyBool = true
-            addTrackButton.hidden = false
-            addSegmentButton.hidden = false
+            addTrackButton.isHidden = false
+            addSegmentButton.isHidden = false
         }else{
             enableAdjusyBool = false
-            addTrackButton.hidden = true
-            addSegmentButton.hidden = true
+            addTrackButton.isHidden = true
+            addSegmentButton.isHidden = true
         }
     }
     
-    func startTrackAnimation(sender:UIButton){
+    func startTrackAnimation(_ sender:UIButton){
         
         var x_arr = Array<Int>()
         var y_arr = Array<Int>()
@@ -354,11 +354,11 @@ class ViewController: UIViewController {
         let track:[(Int,Int)] = tipTrack[sender.tag]!
 //        print("track is \(track)")
         let movePositionY = POPSpringAnimation(propertyNamed: kPOPLayerTranslationY)
-        movePositionY.toValue = 50
-        movePositionY.springBounciness = 5
-        movePositionY.springSpeed = 5
-        sender.layer.pop_addAnimation(movePositionY, forKey: "movePositionY\(sender.tag)")
-        movePositionY.completionBlock = { (animation, complete) in
+        movePositionY?.toValue = 50
+        movePositionY?.springBounciness = 5
+        movePositionY?.springSpeed = 5
+        sender.layer.pop_add(movePositionY, forKey: "movePositionY\(sender.tag)")
+        movePositionY?.completionBlock = { (animation, complete) in
             if complete {
                 print("first Y is \(sender.tag)")
                 for (x,y) in track {
@@ -371,24 +371,24 @@ class ViewController: UIViewController {
     }
     
 //    var i = 0
-    func movePostionXAndY(sender:UIButton,x_arr:Array<Int>,y_arr:Array<Int>,i:Int){
+    func movePostionXAndY(_ sender:UIButton,x_arr:Array<Int>,y_arr:Array<Int>,i:Int){
         
         print("Into move is \(sender.tag)")
 
         if i == x_arr.count {
 
             let scale = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
-            scale.toValue = NSValue(CGPoint:CGPointMake(0.8, 0.8))
-            scale.springBounciness = 20
-            scale.springSpeed = 5
-            sender.pop_addAnimation(scale, forKey: "scale")
-            scale.completionBlock = { (animation, complete) in
+            scale?.toValue = NSValue(cgPoint:CGPoint(x: 0.8, y: 0.8))
+            scale?.springBounciness = 20
+            scale?.springSpeed = 5
+            sender.pop_add(scale, forKey: "scale")
+            scale?.completionBlock = { (animation, complete) in
                 if complete {
                     let scale2 = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
-                    scale2.toValue = NSValue(CGPoint:CGPointMake(1.2, 1.2))
-                    scale2.springBounciness = 20
-                    scale2.springSpeed = 18
-                    sender.pop_addAnimation(scale2, forKey: "scale2")
+                    scale2?.toValue = NSValue(cgPoint:CGPoint(x: 1.2, y: 1.2))
+                    scale2?.springBounciness = 20
+                    scale2?.springSpeed = 18
+                    sender.pop_add(scale2, forKey: "scale2")
                 }
             }
 //            print("x is \(x_arr)\ny is \(y_arr)")
@@ -402,19 +402,19 @@ class ViewController: UIViewController {
 //                print("moveX_")
             
             let movePositionX = POPSpringAnimation(propertyNamed: kPOPLayerPositionX)
-            movePositionX.toValue = _x
-            movePositionX.springBounciness = 5
-            movePositionX.springSpeed = 5
-            sender.layer.pop_addAnimation(movePositionX, forKey: "movePositionX\(i)+\(sender.tag)")
-            movePositionX.completionBlock = { (animation, complete) in
+            movePositionX?.toValue = _x
+            movePositionX?.springBounciness = 5
+            movePositionX?.springSpeed = 5
+            sender.layer.pop_add(movePositionX, forKey: "movePositionX\(i)+\(sender.tag)")
+            movePositionX?.completionBlock = { (animation, complete) in
                 if complete {
 //                        print("move_Y")
                     let movePositionY = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
-                    movePositionY.toValue = _y
-                    movePositionY.springBounciness = 5
-                    movePositionY.springSpeed = 5
-                    sender.layer.pop_addAnimation(movePositionY, forKey: "movePositionY\(i)+\(sender.tag)")
-                    movePositionY.completionBlock = { (animation, complete) in
+                    movePositionY?.toValue = _y
+                    movePositionY?.springBounciness = 5
+                    movePositionY?.springSpeed = 5
+                    sender.layer.pop_add(movePositionY, forKey: "movePositionY\(i)+\(sender.tag)")
+                    movePositionY?.completionBlock = { (animation, complete) in
                         if complete {
                             self.isAnimeOver = true
 //                                i += 1
@@ -426,11 +426,11 @@ class ViewController: UIViewController {
         }else{
 //                print("moveY")
             let movePositionY = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
-            movePositionY.toValue = _y
-            movePositionY.springBounciness = 5
-            movePositionY.springSpeed = 5
-            sender.layer.pop_addAnimation(movePositionY, forKey: "movePositionY\(i)+\(sender.tag)")
-            movePositionY.completionBlock = { (animation, complete) in
+            movePositionY?.toValue = _y
+            movePositionY?.springBounciness = 5
+            movePositionY?.springSpeed = 5
+            sender.layer.pop_add(movePositionY, forKey: "movePositionY\(i)+\(sender.tag)")
+            movePositionY?.completionBlock = { (animation, complete) in
                 if complete {
                     self.isAnimeOver = true
 //                        i += 1
@@ -444,12 +444,12 @@ class ViewController: UIViewController {
     }
     
 //    func hamburger(){
-    func hamburger(frame:CGRect,view:UIView){
-        hamburgerButton.backgroundColor = .blackColor()
+    func hamburger(_ frame:CGRect,view:UIView){
+        hamburgerButton.backgroundColor = UIColor.black
         hamburgerButton.frame = frame
         
         view.addSubview(hamburgerButton)
-        hamburgerButton.addTarget(self, action: #selector(ViewController.didTaphamburgerButton(_:)), forControlEvents: .TouchUpInside)
+        hamburgerButton.addTarget(self, action: #selector(ViewController.didTaphamburgerButton(_:)), for: .touchUpInside)
         
         let width = hamburgerButton.bounds.size.width
         let height = hamburgerButton.bounds.size.height
@@ -457,40 +457,40 @@ class ViewController: UIViewController {
         hamburgerButton.layer.cornerRadius = height/2
         let sectionWidth:CGFloat = width*0.5
         let sectionHeight:CGFloat = height*0.07
-        top = UIView(frame:CGRectMake(width/2 - sectionWidth/2,height*0.27,sectionWidth,sectionHeight))
-        top!.backgroundColor = UIColor.whiteColor()
-        top!.userInteractionEnabled = false
+        top = UIView(frame:CGRect(x: width/2 - sectionWidth/2,y: height*0.27,width: sectionWidth,height: sectionHeight))
+        top!.backgroundColor = UIColor.white
+        top!.isUserInteractionEnabled = false
         top!.layer.cornerRadius = sectionHeight/2
         hamburgerButton.addSubview(top!)
         
-        middle = UIView(frame:CGRectMake(width/2 - sectionWidth/2,height*0.46,sectionWidth,sectionHeight))
-        middle!.backgroundColor = UIColor.whiteColor()
-        middle!.userInteractionEnabled = false
+        middle = UIView(frame:CGRect(x: width/2 - sectionWidth/2,y: height*0.46,width: sectionWidth,height: sectionHeight))
+        middle!.backgroundColor = UIColor.white
+        middle!.isUserInteractionEnabled = false
         middle!.layer.cornerRadius = sectionHeight/2
         hamburgerButton.addSubview(middle!)
         
-        bottom = UIView(frame:CGRectMake(width/2 - sectionWidth/2,height*0.66,sectionWidth,sectionHeight))
-        bottom!.backgroundColor = UIColor.whiteColor()
-        bottom!.userInteractionEnabled = false
+        bottom = UIView(frame:CGRect(x: width/2 - sectionWidth/2,y: height*0.66,width: sectionWidth,height: sectionHeight))
+        bottom!.backgroundColor = UIColor.white
+        bottom!.isUserInteractionEnabled = false
         bottom!.layer.cornerRadius = sectionHeight/2
         hamburgerButton.addSubview(bottom!)
         
     }
     
-    func didTaphamburgerButton(sender:UIButton){
+    func didTaphamburgerButton(_ sender:UIButton){
     
         //color
-        var topColor = self.top?.pop_animationForKey("topColor") as! POPSpringAnimation?
-        var bottomColor = self.top?.pop_animationForKey("bottomColor") as! POPSpringAnimation?
+        var topColor = self.top?.pop_animation(forKey: "topColor") as! POPSpringAnimation?
+        var bottomColor = self.top?.pop_animation(forKey: "bottomColor") as! POPSpringAnimation?
 
         //rotate
-        var topRotate = self.top?.layer.pop_animationForKey("topRotate") as! POPSpringAnimation?
-        var bottomRotate = self.top?.layer.pop_animationForKey("bottomRotate") as! POPSpringAnimation?
+        var topRotate = self.top?.layer.pop_animation(forKey: "topRotate") as! POPSpringAnimation?
+        var bottomRotate = self.top?.layer.pop_animation(forKey: "bottomRotate") as! POPSpringAnimation?
         
         
         //position
-        var topPosition = self.top?.layer.pop_animationForKey("topPosition") as! POPSpringAnimation?
-        var bottomPosition = self.top?.layer.pop_animationForKey("bottomPositon") as! POPSpringAnimation?
+        var topPosition = self.top?.layer.pop_animation(forKey: "topPosition") as! POPSpringAnimation?
+        var bottomPosition = self.top?.layer.pop_animation(forKey: "bottomPositon") as! POPSpringAnimation?
 
         if hamburgerOpen {
             
@@ -499,7 +499,7 @@ class ViewController: UIViewController {
                 if i.tag < customTrackCount+1 {
                     let btn:UIButton = i as! UIButton
                     
-                    let thread = NSThread(target:self, selector:#selector(ViewController.startTrackAnimation(_:)),object:btn)
+                    let thread = Thread(target:self, selector:#selector(ViewController.startTrackAnimation(_:)),object:btn)
                     thread.name = "btnThread\(i.tag)"
                     thread.start()
                     
@@ -526,28 +526,28 @@ class ViewController: UIViewController {
 
             hamburgerOpen = false
             
-            UIView.animateWithDuration(0.2, animations: { ()-> Void in
+            UIView.animate(withDuration: 0.2, animations: { ()-> Void in
                 self.middle!.alpha = 0
             })
             
             if topColor != nil {
-                topColor?.toValue = UIColor.redColor()
+                topColor?.toValue = UIColor.red
             }else{
                 topColor = POPSpringAnimation(propertyNamed: kPOPViewBackgroundColor)
-                topColor?.toValue = UIColor.redColor()
+                topColor?.toValue = UIColor.red
                 topColor?.springBounciness = 0
                 topColor?.springSpeed = 18
-                top?.pop_addAnimation(topColor, forKey: "topColor")
+                top?.pop_add(topColor, forKey: "topColor")
             }
             
             if bottomColor != nil {
-                bottomColor?.toValue = UIColor.redColor()
+                bottomColor?.toValue = UIColor.red
             }else{
                 bottomColor = POPSpringAnimation(propertyNamed: kPOPViewBackgroundColor)
-                bottomColor?.toValue = UIColor.redColor()
+                bottomColor?.toValue = UIColor.red
                 bottomColor?.springBounciness = 0
                 bottomColor?.springSpeed = 18
-                bottom?.pop_addAnimation(bottomColor, forKey: "bottomColor")
+                bottom?.pop_add(bottomColor, forKey: "bottomColor")
             }
             
             if topRotate != nil {
@@ -557,7 +557,7 @@ class ViewController: UIViewController {
                 topRotate?.toValue = -M_PI/4
                 topRotate?.springBounciness = 11
                 topRotate?.springSpeed = 18
-                top?.layer.pop_addAnimation(topRotate, forKey: "topRotate")
+                top?.layer.pop_add(topRotate, forKey: "topRotate")
             }
 //
             if bottomRotate != nil {
@@ -567,7 +567,7 @@ class ViewController: UIViewController {
                 bottomRotate?.toValue = M_PI/4
                 bottomRotate?.springBounciness = 11
                 bottomRotate?.springSpeed = 18
-                bottom?.layer.pop_addAnimation(bottomRotate, forKey: "bottomRotate")
+                bottom?.layer.pop_add(bottomRotate, forKey: "bottomRotate")
             }
             
             if topPosition != nil {
@@ -577,7 +577,7 @@ class ViewController: UIViewController {
                 topPosition?.toValue = CGFloat(sender.tag)*0.2
                 topPosition?.springBounciness = 11
                 topPosition?.springSpeed = 18
-                top?.layer.pop_addAnimation(topPosition, forKey: "topPosition")
+                top?.layer.pop_add(topPosition, forKey: "topPosition")
             }
             
             if bottomPosition != nil {
@@ -587,7 +587,7 @@ class ViewController: UIViewController {
                 bottomPosition?.toValue = -CGFloat(sender.tag)*0.2
                 bottomPosition?.springBounciness = 11
                 bottomPosition?.springSpeed = 18
-                bottom?.layer.pop_addAnimation(bottomPosition, forKey: "bottomPosition")
+                bottom?.layer.pop_add(bottomPosition, forKey: "bottomPosition")
             }
             
         }else{
@@ -599,28 +599,28 @@ class ViewController: UIViewController {
 
             hamburgerOpen = true
             
-            UIView.animateWithDuration(0.2, animations: { ()-> Void in
+            UIView.animate(withDuration: 0.2, animations: { ()-> Void in
                 self.middle!.alpha = 1
             })
             
             if topColor != nil {
-                topColor?.toValue = UIColor.whiteColor()
+                topColor?.toValue = UIColor.white
             }else{
                 topColor = POPSpringAnimation(propertyNamed: kPOPViewBackgroundColor)
-                topColor?.toValue = UIColor.whiteColor()
+                topColor?.toValue = UIColor.white
                 topColor?.springBounciness = 0
                 topColor?.springSpeed = 18
-                top?.pop_addAnimation(topColor, forKey: "topColor")
+                top?.pop_add(topColor, forKey: "topColor")
             }
             
             if bottomColor != nil {
-                bottomColor?.toValue = UIColor.whiteColor()
+                bottomColor?.toValue = UIColor.white
             }else{
                 bottomColor = POPSpringAnimation(propertyNamed: kPOPViewBackgroundColor)
-                bottomColor?.toValue = UIColor.whiteColor()
+                bottomColor?.toValue = UIColor.white
                 bottomColor?.springBounciness = 0
                 bottomColor?.springSpeed = 18
-                bottom?.pop_addAnimation(bottomColor, forKey: "bottomColor")
+                bottom?.pop_add(bottomColor, forKey: "bottomColor")
             }
             
             if topRotate != nil {
@@ -630,7 +630,7 @@ class ViewController: UIViewController {
                 topRotate?.toValue = 0
                 topRotate?.springBounciness = 11
                 topRotate?.springSpeed = 18
-                top?.layer.pop_addAnimation(topRotate, forKey: "topRotate")
+                top?.layer.pop_add(topRotate, forKey: "topRotate")
             }
             //
             if bottomRotate != nil {
@@ -640,7 +640,7 @@ class ViewController: UIViewController {
                 bottomRotate?.toValue = 0
                 bottomRotate?.springBounciness = 11
                 bottomRotate?.springSpeed = 18
-                bottom?.layer.pop_addAnimation(bottomRotate, forKey: "bottomRotate")
+                bottom?.layer.pop_add(bottomRotate, forKey: "bottomRotate")
             }
             
             if topPosition != nil {
@@ -650,7 +650,7 @@ class ViewController: UIViewController {
                 topPosition?.toValue = 0
                 topPosition?.springBounciness = 11
                 topPosition?.springSpeed = 18
-                top?.layer.pop_addAnimation(topPosition, forKey: "topPosition")
+                top?.layer.pop_add(topPosition, forKey: "topPosition")
             }
             
             if bottomPosition != nil {
@@ -660,14 +660,14 @@ class ViewController: UIViewController {
                 bottomPosition?.toValue = 0
                 bottomPosition?.springBounciness = 11
                 bottomPosition?.springSpeed = 18
-                bottom?.layer.pop_addAnimation(bottomPosition, forKey: "bottomPosition")
+                bottom?.layer.pop_add(bottomPosition, forKey: "bottomPosition")
             }
         
         }
         
     }
     
-    func trackMove(x:Int,y:Int) -> Int{
+    func trackMove(_ x:Int,y:Int) -> Int{
         
         var _x = x
         
@@ -693,14 +693,14 @@ class ViewController: UIViewController {
     }
     
     
-    func initArrayFromCount(count:Int){
+    func initArrayFromCount(_ count:Int){
         for i in 1...count {
             initPointArray.append(i)
         }
     }
     
-    func arrayContains(offset:Int) -> Bool{
-        return turnPointArray.contains({ (element) -> Bool in
+    func arrayContains(_ offset:Int) -> Bool{
+        return turnPointArray.contains(where: { (element) -> Bool in
             let contain = ((element.0+offset == x)&&(element.1 == y)) ? true : false   
             return contain
         })

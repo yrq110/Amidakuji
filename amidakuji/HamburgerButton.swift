@@ -23,28 +23,28 @@ class HamburgerButton: ACButton {
         self.layer.cornerRadius = height/2
         let sectionWidth:CGFloat = width*0.5
         let sectionHeight:CGFloat = height*0.07
-        top = UIView(frame:CGRectMake(width/2 - sectionWidth/2,height*0.27,sectionWidth,sectionHeight))
-        top.backgroundColor = UIColor.whiteColor()
-        top.userInteractionEnabled = false
+        top = UIView(frame:CGRect(x: width/2 - sectionWidth/2,y: height*0.27,width: sectionWidth,height: sectionHeight))
+        top.backgroundColor = UIColor.white
+        top.isUserInteractionEnabled = false
         top.layer.cornerRadius = sectionHeight/2
         self.addSubview(top)
         
-        middle = UIView(frame:CGRectMake(width/2 - sectionWidth/2,height*0.46,sectionWidth,sectionHeight))
-        middle.backgroundColor = UIColor.whiteColor()
-        middle.userInteractionEnabled = false
+        middle = UIView(frame:CGRect(x: width/2 - sectionWidth/2,y: height*0.46,width: sectionWidth,height: sectionHeight))
+        middle.backgroundColor = UIColor.white
+        middle.isUserInteractionEnabled = false
         middle.layer.cornerRadius = sectionHeight/2
         self.addSubview(middle)
         
-        bottom = UIView(frame:CGRectMake(width/2 - sectionWidth/2,height*0.66,sectionWidth,sectionHeight))
-        bottom.backgroundColor = UIColor.whiteColor()
-        bottom.userInteractionEnabled = false
+        bottom = UIView(frame:CGRect(x: width/2 - sectionWidth/2,y: height*0.66,width: sectionWidth,height: sectionHeight))
+        bottom.backgroundColor = UIColor.white
+        bottom.isUserInteractionEnabled = false
         bottom.layer.cornerRadius = sectionHeight/2
         self.addSubview(bottom)
         
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         
         
         

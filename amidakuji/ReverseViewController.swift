@@ -46,7 +46,7 @@ class ReverseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         customBtnView.frame = self.view.frame
         customTrackView.frame = self.view.frame
         customBackView.frame = self.view.frame
@@ -64,7 +64,7 @@ class ReverseViewController: UIViewController {
 //            print(arr[a])
             resultArray.append(arr[a])
             let btn_tag = arr[a]
-            arr.removeAtIndex(a)
+            arr.remove(at: a)
 
 //            resultArray.append(arr[i-1])
 //            let btn_tag = arr[i-1]
@@ -72,21 +72,21 @@ class ReverseViewController: UIViewController {
             let btn = ACButton()
             btn.x = i
             btn.y = TrackSegemetCount
-            btn.setTitle("\(btn_tag)", forState: UIControlState.Normal)
-            btn.frame = CGRectMake(45+(CGFloat(i)-1)*40, 500, 30, 30)
+            btn.setTitle("\(btn_tag)", for: UIControlState())
+            btn.frame = CGRect(x: 45+(CGFloat(i)-1)*40, y: 500, width: 30, height: 30)
 //            btn.addTarget(self, action: #selector(ViewController.startTrackAnimation(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             btn.layer.cornerRadius = btn.frame.size.height/2
 //            btn.tag = btn_tag + 100*8 + 10*i
 //            print("center.x is \(btn.center.x),y is \(btn.center.y)")
-            btn.addTarget(self, action: #selector(ReverseViewController.startTrackAnimation(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            btn.addTarget(self, action: #selector(ReverseViewController.startTrackAnimation(_:)), for: UIControlEvents.touchUpInside)
             btn.tag = btn_tag
-            btn.setTitleColor(.whiteColor(), forState: .Normal)
-            btn.backgroundColor = UIColor.blackColor()
+            btn.setTitleColor(.white, for: UIControlState())
+            btn.backgroundColor = UIColor.black
 //            btn.enabled = false
             customBtnView.addSubview(btn)
             
-            let line = UIView(frame:CGRectMake(55+(CGFloat(i)-1)*XStep,120,10,390))
-            line.backgroundColor = UIColor.greenColor()
+            let line = UIView(frame:CGRect(x: 55+(CGFloat(i)-1)*XStep,y: 120,width: 10,height: 390))
+            line.backgroundColor = UIColor.green
             line.layer.cornerRadius = 3.0
             line.tag = i*1000
             customTrackView.addSubview(line)
@@ -104,50 +104,50 @@ class ReverseViewController: UIViewController {
 //        view.addSubview(customBackView)
         
         let startBtn = ACButton()
-        startBtn.setTitle("Go!", forState: UIControlState.Normal)
-        startBtn.backgroundColor = UIColor.blackColor()
-        startBtn.frame = CGRectMake(170,30, 50, 50)
+        startBtn.setTitle("Go!", for: UIControlState())
+        startBtn.backgroundColor = UIColor.black
+        startBtn.frame = CGRect(x: 170,y: 30, width: 50, height: 50)
         startBtn.layer.cornerRadius = 25
-        startBtn.addTarget(self, action: #selector(ReverseViewController.startAllAnimation(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        startBtn.addTarget(self, action: #selector(ReverseViewController.startAllAnimation(_:)), for: UIControlEvents.touchUpInside)
 //        view.addSubview(startBtn)
         customBackView.addSubview(startBtn)
         
-        calculateTrackButton.backgroundColor = UIColor.brownColor()
-        calculateTrackButton.setTitle("2-Track", forState: UIControlState.Normal)
-        calculateTrackButton.frame = CGRectMake(260,40, 80, 30)
-        calculateTrackButton.addTarget(self, action: #selector(ReverseViewController.calculateTrack(_:)), forControlEvents: .TouchUpInside)
+        calculateTrackButton.backgroundColor = UIColor.brown
+        calculateTrackButton.setTitle("2-Track", for: UIControlState())
+        calculateTrackButton.frame = CGRect(x: 260,y: 40, width: 80, height: 30)
+        calculateTrackButton.addTarget(self, action: #selector(ReverseViewController.calculateTrack(_:)), for: .touchUpInside)
         calculateTrackButton.layer.cornerRadius = 10
         customBackView.addSubview(calculateTrackButton)
         
-        calculateTurnLineButton.backgroundColor = UIColor.brownColor()
-        calculateTurnLineButton.setTitle("1-Answer", forState: UIControlState.Normal)
-        calculateTurnLineButton.frame = CGRectMake(20,40, 100, 30)
-        calculateTurnLineButton.addTarget(self, action: #selector(ReverseViewController.reverse(_:)), forControlEvents: .TouchUpInside)
+        calculateTurnLineButton.backgroundColor = UIColor.brown
+        calculateTurnLineButton.setTitle("1-Answer", for: UIControlState())
+        calculateTurnLineButton.frame = CGRect(x: 20,y: 40, width: 100, height: 30)
+        calculateTurnLineButton.addTarget(self, action: #selector(ReverseViewController.reverse(_:)), for: .touchUpInside)
         calculateTurnLineButton.layer.cornerRadius = 10
         customBackView.addSubview(calculateTurnLineButton)
         view.addSubview(customBackView)
         
-        changeModeButton = UIButton(type:.Custom)
-        changeModeButton.setTitle("Mode A", forState: UIControlState.Normal)
-        changeModeButton.frame = CGRectMake(0, 0, 200, 60)
-        changeModeButton.center = CGPointMake(view.center.x, view.frame.size.height-40)
-        changeModeButton.backgroundColor = UIColor.redColor()
-        changeModeButton.addTarget(self, action: #selector(ReverseViewController.goToReverseVC(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        changeModeButton = UIButton(type:.custom)
+        changeModeButton.setTitle("Mode A", for: UIControlState())
+        changeModeButton.frame = CGRect(x: 0, y: 0, width: 200, height: 60)
+        changeModeButton.center = CGPoint(x: view.center.x, y: view.frame.size.height-40)
+        changeModeButton.backgroundColor = UIColor.red
+        changeModeButton.addTarget(self, action: #selector(ReverseViewController.goToReverseVC(_:)), for: UIControlEvents.touchUpInside)
         view.addSubview(changeModeButton)
     }
     
-    func goToReverseVC(sender:UIButton){
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func goToReverseVC(_ sender:UIButton){
+        self.dismiss(animated: true, completion: nil)
 //        let vc = ViewController()
 //        self.presentViewController(vc, animated: true, completion: nil)
     }
     
-    func startAllAnimation(sender:UIButton){
+    func startAllAnimation(_ sender:UIButton){
         for i in customBtnView.subviews {
             if i.tag < customTrackCount+1 {
                 let btn:UIButton = i as! UIButton
                 
-                let thread = NSThread(target:self, selector:#selector(ReverseViewController.startTrackAnimation(_:)),object:btn)
+                let thread = Thread(target:self, selector:#selector(ReverseViewController.startTrackAnimation(_:)),object:btn)
                 thread.name = "btnThread\(i.tag)"
                 thread.start()
             }
@@ -155,7 +155,7 @@ class ReverseViewController: UIViewController {
     
     }
     
-    func startTrackAnimation(sender:UIButton){
+    func startTrackAnimation(_ sender:UIButton){
         
         var x_arr = Array<Int>()
         var y_arr = Array<Int>()
@@ -163,11 +163,11 @@ class ReverseViewController: UIViewController {
         let track:[(Int,Int)] = tipTrack[sender.tag]!
         //        print("track is \(track)")
         let movePositionY = POPSpringAnimation(propertyNamed: kPOPLayerTranslationY)
-        movePositionY.toValue = 0
-        movePositionY.springBounciness = 5
-        movePositionY.springSpeed = 5
-        sender.layer.pop_addAnimation(movePositionY, forKey: "movePositionY\(sender.tag)")
-        movePositionY.completionBlock = { (animation, complete) in
+        movePositionY?.toValue = 0
+        movePositionY?.springBounciness = 5
+        movePositionY?.springSpeed = 5
+        sender.layer.pop_add(movePositionY, forKey: "movePositionY\(sender.tag)")
+        movePositionY?.completionBlock = { (animation, complete) in
             if complete {
 //                print("first Y is \(sender.tag)")
                 for (x,y) in track {
@@ -179,39 +179,39 @@ class ReverseViewController: UIViewController {
         }
     }
     
-    func movePostionXAndY(sender:UIButton,x_arr:Array<Int>,y_arr:Array<Int>,i:Int){
+    func movePostionXAndY(_ sender:UIButton,x_arr:Array<Int>,y_arr:Array<Int>,i:Int){
         
 //        print("Into move is \(sender.tag)")
         
         if i == x_arr.count {
             
             let movePositionY = POPSpringAnimation(propertyNamed: kPOPLayerTranslationY)
-            movePositionY.toValue = -50
-            movePositionY.springBounciness = 5
-            movePositionY.springSpeed = 5
-            sender.layer.pop_addAnimation(movePositionY, forKey: "movePositionY\(sender.tag)")
-            movePositionY.completionBlock = { (animation, complete) in
+            movePositionY?.toValue = -50
+            movePositionY?.springBounciness = 5
+            movePositionY?.springSpeed = 5
+            sender.layer.pop_add(movePositionY, forKey: "movePositionY\(sender.tag)")
+            movePositionY?.completionBlock = { (animation, complete) in
                 if complete {
                     let scale = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
-                    scale.toValue = NSValue(CGPoint:CGPointMake(0.8, 0.8))
-                    scale.springBounciness = 20
-                    scale.springSpeed = 5
-                    sender.pop_addAnimation(scale, forKey: "scale")
-                    scale.completionBlock = { (animation, complete) in
+                    scale?.toValue = NSValue(cgPoint:CGPoint(x: 0.8, y: 0.8))
+                    scale?.springBounciness = 20
+                    scale?.springSpeed = 5
+                    sender.pop_add(scale, forKey: "scale")
+                    scale?.completionBlock = { (animation, complete) in
                         if complete {
                             let scale2 = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
-                            scale2.toValue = NSValue(CGPoint:CGPointMake(1.2, 1.2))
-                            scale2.springBounciness = 20
-                            scale2.springSpeed = 18
-                            sender.pop_addAnimation(scale2, forKey: "scale2")
+                            scale2?.toValue = NSValue(cgPoint:CGPoint(x: 1.2, y: 1.2))
+                            scale2?.springBounciness = 20
+                            scale2?.springSpeed = 18
+                            sender.pop_add(scale2, forKey: "scale2")
                             
                             let btn = sender as! ACButton
                             print("\(btn.tag),\(btn.x!),\(btn.y!)")
 //                            print(NSThread.currentThread())
-                            let thread = NSThread.currentThread()
+                            let thread = Thread.current
                             thread.cancel()
                             
-                            btn.backgroundColor = btn.tag == btn.x! ? UIColor.greenColor() : UIColor.redColor()
+                            btn.backgroundColor = btn.tag == btn.x! ? UIColor.green : UIColor.red
                             
                             let score = btn.tag == btn.x! ? 1 : 0
                             self.scoreArray.append(score)
@@ -236,14 +236,14 @@ class ReverseViewController: UIViewController {
                                     alertString = ""
                                 }
                                 
-                                let alertController = UIAlertController(title: "提示",message: alertString, preferredStyle: UIAlertControllerStyle.Alert)
-                                let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
-                                let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default,handler: { action in
+                                let alertController = UIAlertController(title: "提示",message: alertString, preferredStyle: UIAlertControllerStyle.alert)
+                                let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+                                let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.default,handler: { action in
                                                                 
                                 })
                                 alertController.addAction(cancelAction)
                                 alertController.addAction(okAction)
-                                self.presentViewController(alertController, animated: true, completion: nil)
+                                self.present(alertController, animated: true, completion: nil)
                             }
                         }
                     }
@@ -261,19 +261,19 @@ class ReverseViewController: UIViewController {
             //                print("moveX_")
             
             let movePositionX = POPSpringAnimation(propertyNamed: kPOPLayerPositionX)
-            movePositionX.toValue = _x
-            movePositionX.springBounciness = 5
-            movePositionX.springSpeed = 5
-            sender.layer.pop_addAnimation(movePositionX, forKey: "movePositionX\(i)+\(sender.tag)")
-            movePositionX.completionBlock = { (animation, complete) in
+            movePositionX?.toValue = _x
+            movePositionX?.springBounciness = 5
+            movePositionX?.springSpeed = 5
+            sender.layer.pop_add(movePositionX, forKey: "movePositionX\(i)+\(sender.tag)")
+            movePositionX?.completionBlock = { (animation, complete) in
                 if complete {
                     //                        print("move_Y")
                     let movePositionY = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
-                    movePositionY.toValue = _y
-                    movePositionY.springBounciness = 5
-                    movePositionY.springSpeed = 5
-                    sender.layer.pop_addAnimation(movePositionY, forKey: "movePositionY\(i)+\(sender.tag)")
-                    movePositionY.completionBlock = { (animation, complete) in
+                    movePositionY?.toValue = _y
+                    movePositionY?.springBounciness = 5
+                    movePositionY?.springSpeed = 5
+                    sender.layer.pop_add(movePositionY, forKey: "movePositionY\(i)+\(sender.tag)")
+                    movePositionY?.completionBlock = { (animation, complete) in
                         if complete {
                             self.isAnimeOver = true
                             //                                i += 1
@@ -285,11 +285,11 @@ class ReverseViewController: UIViewController {
         }else{
             //                print("moveY")
             let movePositionY = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
-            movePositionY.toValue = _y
-            movePositionY.springBounciness = 5
-            movePositionY.springSpeed = 5
-            sender.layer.pop_addAnimation(movePositionY, forKey: "movePositionY\(i)+\(sender.tag)")
-            movePositionY.completionBlock = { (animation, complete) in
+            movePositionY?.toValue = _y
+            movePositionY?.springBounciness = 5
+            movePositionY?.springSpeed = 5
+            sender.layer.pop_add(movePositionY, forKey: "movePositionY\(i)+\(sender.tag)")
+            movePositionY?.completionBlock = { (animation, complete) in
                 if complete {
                     self.isAnimeOver = true
                     //                        i += 1
@@ -302,18 +302,18 @@ class ReverseViewController: UIViewController {
         
     }
     
-    func calculateTrack(sender:UIButton){
+    func calculateTrack(_ sender:UIButton){
         
         for i in 1...customTrackCount {
 //
 //            btn_x = btn_x_array[i-1]
             btn_y = 515
 //            print(resultArray.indexOf(i)!+1)
-            btn_x = btn_x_array[resultArray.indexOf(i)!]
+            btn_x = btn_x_array[resultArray.index(of: i)!]
 //            print( "\(resultArray.indexOf(i)!+1) is \(btn_x)")
 //            print(btn_x)
             y = TrackSegemetCount
-            x = resultArray.indexOf(i)!+1
+            x = resultArray.index(of: i)!+1
 //            print("init x is \(x) ,y is \(y)")
 
             y -= 1
@@ -337,7 +337,7 @@ class ReverseViewController: UIViewController {
             }
             
             for j in customBtnView.subviews {
-                if j.isKindOfClass(ACButton) && j.backgroundColor == UIColor.blackColor() && j.tag == i {
+                if j.isKind(of: ACButton.self) && j.backgroundColor == UIColor.black && j.tag == i {
                     let btn = j as! ACButton
                     btn.x! = x
                     btn.y! = y
@@ -350,12 +350,12 @@ class ReverseViewController: UIViewController {
             trackDic = []
         }
         print(tipTrack)
-        sender.enabled = false
+        sender.isEnabled = false
     
     }
     
     
-    func reverse(sender:UIButton){
+    func reverse(_ sender:UIButton){
         for i in 1...customTrackCount {
             for btnView in customBtnView.subviews {
                 if btnView.tag == i {
@@ -383,7 +383,7 @@ class ReverseViewController: UIViewController {
     var isTrackChanged = false
     
     //移动主要节点
-    func moveUpStepByStep(btn:ACButton){
+    func moveUpStepByStep(_ btn:ACButton){
         
 //        var isTrackChanged = false
 //        var nextTurnStartY = btn.y!
@@ -425,7 +425,7 @@ class ReverseViewController: UIViewController {
     }
     
     //移动其他节点
-    func moveOtherBtn(a:Int,moveToY:Int){
+    func moveOtherBtn(_ a:Int,moveToY:Int){
         
         if a == customTrackCount {
             drawTurnLine()
@@ -435,19 +435,19 @@ class ReverseViewController: UIViewController {
         for btnView in customBtnView.subviews {
             
             for i in a+1...customTrackCount{
-                if btnView.tag == i && btnView.isKindOfClass(ACButton) {
+                if btnView.tag == i && btnView.isKind(of: ACButton.self) {
                     let acBtn = btnView as! ACButton
                     
                     while acBtn.y! != moveToY {
                         
                         acBtn.y! -= 1
                         
-                        if turnPointArray.contains({ (element) -> Bool in
+                        if turnPointArray.contains(where: { (element) -> Bool in
                             let contain = ((element.0 == acBtn.x!)&&(element.1 == acBtn.y!)) ? true : false
                             return contain
                         }) {
                             acBtn.x! += 1
-                        }else if turnPointArray.contains({ (element) -> Bool in
+                        }else if turnPointArray.contains(where: { (element) -> Bool in
                             let contain = ((element.0 + 1 == acBtn.x!)&&(element.1 == acBtn.y!)) ? true : false
                             return contain
                         }) {
@@ -467,22 +467,22 @@ class ReverseViewController: UIViewController {
     func drawTurnLine(){
         
         for i in customBtnView.subviews {
-            if i.backgroundColor == UIColor.redColor(){
+            if i.backgroundColor == UIColor.red{
                 let sender = i as! ACButton
                 let a = sender.tag
                 let aa = a/100
                 let bb = a%100
-                sender.enabled = false
+                sender.isEnabled = false
 //                sender.hidden = true
-                if turnPointArray.contains({ (element) -> Bool in
+                if turnPointArray.contains(where: { (element) -> Bool in
                     let contain = ((element.0 == aa)&&(element.1 == bb)) ? true : false
                     return contain
                 }) {
                     let horiLine = UIView()
-                    horiLine.frame.size = CGSizeMake(35, 5)
-                    horiLine.frame.origin = CGPointMake(sender.center.x, sender.center.y)
+                    horiLine.frame.size = CGSize(width: 35, height: 5)
+                    horiLine.frame.origin = CGPoint(x: sender.center.x, y: sender.center.y)
                     horiLine.center.y = sender.center.y
-                    horiLine.backgroundColor = UIColor.redColor()
+                    horiLine.backgroundColor = UIColor.red
                     customTrackView.addSubview(horiLine)
 //                    print("line x is \(horiLine.frame.origin.x), y is \(horiLine.frame.origin.y+horiLine.frame.size.height/2)")
 //                    print("btn.center x is \(sender.center.x) y is \(sender.center.y)")
@@ -512,55 +512,55 @@ class ReverseViewController: UIViewController {
     }
     
     
-    func addPoint(count:Int,line:UIView,view:UIView,lineNumber:Int){
+    func addPoint(_ count:Int,line:UIView,view:UIView,lineNumber:Int){
         
         for i in 1...count-1 {
             let circle = ACButton()
             circle.tag = lineNumber*100 + i
             if lineNumber == customTrackCount {
-                circle.enabled = false
+                circle.isEnabled = false
             }
             //            print(circle.tag)
-            circle.frame.size = CGSizeMake(pointSize, pointSize)
+            circle.frame.size = CGSize(width: pointSize, height: pointSize)
             circle.layer.cornerRadius = pointSize/2
             (circle.center.x,circle.center.y) = (line.center.x,115+CGFloat(i)*self.YStep)
-            circle.backgroundColor = UIColor.redColor()
-            circle.addTarget(self, action: #selector(ViewController.tapPoint(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            circle.backgroundColor = UIColor.red
+            circle.addTarget(self, action: #selector(ViewController.tapPoint(_:)), for: UIControlEvents.touchUpInside)
             view.addSubview(circle)
         }
         
     }
     
-    func tapPoint(sender:UIButton){
+    func tapPoint(_ sender:UIButton){
         let a = sender.tag
         let aa = a/100
         let bb = a%100
         let horiLine = UIView()
-        horiLine.frame.size = CGSizeMake(35, 5)
-        horiLine.frame.origin = CGPointMake(sender.center.x, sender.center.y)
+        horiLine.frame.size = CGSize(width: 35, height: 5)
+        horiLine.frame.origin = CGPoint(x: sender.center.x, y: sender.center.y)
         horiLine.center.y = sender.center.y
-        horiLine.backgroundColor = UIColor.redColor()
+        horiLine.backgroundColor = UIColor.red
         customTrackView.addSubview(horiLine)
         
         turnPointArray.append((aa,bb))
         print(turnPointArray)
-        sender.enabled = false
+        sender.isEnabled = false
         let new_tag = (aa+1)*100+bb
         for i in customBtnView.subviews {
-            if i.tag == new_tag && i.isKindOfClass(UIButton) {
+            if i.tag == new_tag && i.isKind(of: UIButton.self) {
                 let btn:UIButton = customBtnView.viewWithTag(new_tag) as! UIButton
-                btn.enabled = false
+                btn.isEnabled = false
             }
         }
     }
     
-    func initArrayFromCount(count:Int){
+    func initArrayFromCount(_ count:Int){
         for i in 1...count {
             initPointArray.append(i)
         }
     }
 
-    func trackMove(x:Int,y:Int) -> Int{
+    func trackMove(_ x:Int,y:Int) -> Int{
         
         var _x = x
         
@@ -585,8 +585,8 @@ class ReverseViewController: UIViewController {
         
     }
     
-    func arrayContains(offset:Int) -> Bool{
-        return turnPointArray.contains({ (element) -> Bool in
+    func arrayContains(_ offset:Int) -> Bool{
+        return turnPointArray.contains(where: { (element) -> Bool in
             let contain = ((element.0+offset == x)&&(element.1 == y)) ? true : false
             return contain
         })
