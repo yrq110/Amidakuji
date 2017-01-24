@@ -43,4 +43,4 @@ Make numbers back to their right initial position.
 
 ## Blog
 
-[Swift实现的鬼脚图小游戏](http://yrq110.me/2016/08/06/amidakuji/)
+[Swift实现的鬼脚图小游戏](http://yrq110.me/2016/08/06/20160806-amidakuji/)
